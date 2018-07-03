@@ -27,7 +27,7 @@ $ sudo apt-get install git
 ### Mac 平台
 
 ```shell
-brew install git
+$ brew install git
 ```
 
 ### 源码安装
@@ -35,12 +35,12 @@ brew install git
 Linux 系统 `git` 源码下载地址是:`https://www.kernel.org/pub/software/scm/git/`,可下载最新版本.
 
 ```shell
-1) tar -zxvf git-2.3.4.tar.gz # 解压缩此源码包
-2) cd git-2.3.4
-3) yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
-4) ./configure
-5) make
-6) make install
+$ tar -zxvf git-2.3.4.tar.gz # 解压缩此源码包
+$ cd git-2.3.4
+$ yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+$ ./configure
+$ make
+$ make install
 ```
 注意, 如果安装的是新版本,可能会出现如下错误:
 ```shell
