@@ -1,4 +1,36 @@
-# Git 安装 
+# Git 多平台安装 
+
+### Windows 平台
+
+打开网址访问 `https://git-scm.com/` 下载 `Git` 并进行安装。
+
+Git GUI 工具：
+
+* [Git for Windows](https://gitforwindows.org/index.html) 
+* [TortoiseGit](https://tortoisegit.org/) 
+* [SourceTree](https://www.sourcetreeapp.com/) 
+
+### GUN/Linux 平台
+
+**Fedora** 平台
+
+```shell
+$ sudo yum install git
+```
+
+如果你在基于 **Debian** 的发行版上，请尝试用 apt-get： 
+
+```shell
+$ sudo apt-get install git
+```
+
+### Mac 平台
+
+```shell
+brew install git
+```
+
+### 源码安装
 
 Linux 系统 `git` 源码下载地址是:`https://www.kernel.org/pub/software/scm/git/`,可下载最新版本.
 
@@ -21,6 +53,6 @@ Linux 系统 `git` 源码下载地址是:`https://www.kernel.org/pub/software/sc
 
 以下是解决方案:
 ```shell
- yum install perl-ExtUtils-MakeMaker package
+$ sudo yum install perl-ExtUtils-MakeMaker package
 ```
 
