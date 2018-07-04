@@ -10,6 +10,7 @@
 * [Git基本使用](03_gitbase/README.md)
   * [Git的基本使用流程](03_gitbase/01_git_workflow.md) 
   * [Git仓库](03_gitbase/02_gitrepo.md)
+  * [状态查看](03_gitbase/03_git_status.md) 
 * [Git绝技—分支](05_git_branch.md)
 * [Git高级进阶](06_git_senior.md)
 
