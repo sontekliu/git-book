@@ -9,7 +9,7 @@ $ git init git_tutorial
 或者
 $ mkdir repository    # 创建仓库目录
 $ cd repository       # 进入到仓库目录
-$ git init			  # 创建仓库
+$ git init			 # 创建仓库
 ```
 
 #### 1.2 检出仓库
