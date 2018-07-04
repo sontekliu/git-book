@@ -7,7 +7,7 @@
   * [使用前的配置](02_config/01_git_base_config.md)
   * [忽略文件配置](02_config/02_gitignore_config.md)
   * [远程仓库配置](02_config/03_remote_config.md)
-* [Git基本使用](03_config/README.md)
+* [Git基本使用](03_gitconfig/README.md)
 * [Git绝技—分支](05_git_branch.md)
 * [Git高级进阶](06_git_senior.md)
 
