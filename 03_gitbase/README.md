@@ -2,7 +2,7 @@
 
 我们先来了解一下 `Git` 工作的几个区间，根据官方文档，一般将 `Git` 分为三个区域，但是根据正常的工作情况，我将 `Git` 大体分为 5 个区域，如下图： 
 
-![Git Partion](../images/git_partion.png)
+![Git Partion](../images/git_flow.png)
 
 * **工作区** 
 
