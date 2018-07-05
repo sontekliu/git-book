@@ -11,7 +11,7 @@
   * [Git的基本使用流程](03_gitbase/01_git_workflow.md) 
   * [Git仓库](03_gitbase/02_gitrepo.md)
   * [记录每次更新](03_gitbase/03_git_updates.md) 
-  * [无尽的后悔药](03_gitbase/04_recover.md) 
+  * [无尽的后悔药](03_gitbase/04_git_recover.md) 
   * [查看历史](03_gitbase/05_git_logs.md)
   * [远程仓库](03_gitbase/06_git_remote.md) 
   * [打标签](03_gitbase/07_git_tags.md)
