@@ -36,13 +36,19 @@ $ git add <filename> # git add .
 $ git commit -m "add README.md file"
 ```
 
-#### 7 提交到远程仓库
+#### 7 从远程仓库更新
 
 ```shell
-$ git push origin master 
+$ git pull
 ```
 
-#### 8. 查看提交日志
+#### 8. 提交到远程仓库
+
+```shell
+$ git push origin master
+```
+
+#### 9. 查看提交日志
 
 ```shell
 $ git log        # git log --pretty=oneline
