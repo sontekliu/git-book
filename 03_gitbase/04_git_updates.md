@@ -78,3 +78,19 @@ $ git rm <files...>
 $ git rm --cached file
 ```
 
+从暂存区移除文件，但是不对文件进行物理删除。
+
+#### 5. 移动文件
+
+```shell
+$ git mv file_form file_to
+```
+
+对文件进行移动，相当于如下三条命令：
+
+```shell
+$ mv file_from file_to
+$ git rm file_form
+$ git add file_to
+```
+
