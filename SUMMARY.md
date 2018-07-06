@@ -15,6 +15,7 @@
   * [查看历史](03_gitbase/05_git_logs.md)
   * [远程仓库](03_gitbase/06_git_remote.md) 
   * [打标签](03_gitbase/07_git_tags.md)
-* [Git绝技—分支](05_git_branch.md)
+* [Git绝技—分支](04_branch/README.md)
+  * [Git 分支](04_branch/01_git_branch_intro.md)
 * [Git高级进阶](06_git_senior.md)
 
