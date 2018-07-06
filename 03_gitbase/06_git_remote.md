@@ -1,5 +1,7 @@
 # Git 远程仓库
 
+![git_remote_02](../images/git_remote_02.png)
+
 本文主要详细介绍 5 个 `Git` 命令，掌握了这些命令的概念和用法，那么你就完全掌握了 `Git` 远程操作。
 
 * git clone
@@ -50,7 +52,7 @@ origin	git@github.com:sontekliu/work-book.git (push)
 
 上面命令表示，当前只有一台远程主机，叫做origin，以及它的网址。
 
-克隆版本库的时候，所使用的远程主机自动被 `Git` 命名为`origin`。如果想用其他的主机名，需要用`git clone`命令的 `-o` 选项指定。
+克隆版本库的时候，所使用的远程主机自动被 `Git` 命名为 `origin`。如果想用其他的主机名，需要用 `git clone` 命令的 `-o` 选项指定。
 
 ```shell
 $ git clone -o mywork git@github.com:sontekliu/work-book.git
@@ -66,19 +68,25 @@ mywork
 $ git remote show <主机名>
 ```
 
-`git remote add`命令用于添加远程主机。
+```shell
+$ git branch -a   # 查看分支详情，列出本地分支和远程分支的引用，-r 只列出远程分支的引用
+```
+
+![git_remote_01](../images/git_remote_01.png)
+
+`git remote add` 命令用于添加远程主机。
 
 ```shell
 $ git remote add <主机名> <网址>
 ```
 
-`git remote rm`命令用于删除远程主机。
+`git remote rm` 命令用于删除本地仓库中对远程主机的引用，不删除远程主机仓库
 
 ```shell
 $ git remote rm <主机名>
 ```
 
-`git remote rename`命令用于远程主机的改名。
+`git remote rename` 命令用于重命名本地仓库远程主机的引用。
 
 ```shell
 $ git remote rename <原主机名> <新主机名>
@@ -86,7 +94,7 @@ $ git remote rename <原主机名> <新主机名>
 
 #### 3. git fetch
 
-该命令主要用于将远程仓库的更新拉取到本地仓库，但是它取回的代码对你本地的开发代码没有影响。适合团队合作的场景，即当其他人提交更新时，其他人需要使用 `git fetch` 命令将远程仓库的提交拉取到本地。
+该命令主要用于将远程仓库的更新抓取到本地仓库对应的远程仓库的引用分支，它取回的代码对你本地的开发代码没有影响。适合团队合作的场景，即当其他人提交更新时，其他人需要使用 `git fetch` 命令将远程仓库的提交抓取到本地。
 
 ```shell
 $ git fetch <远程主机名>
@@ -98,28 +106,11 @@ $ git fetch <远程主机名>
 
 ```shell
 $ git fetch <远程主机名> <分支名>
-```
-
-比如，取回 `origin` 主机的 `master` 分支。
-
-```shell
+如：抓取 origin 主机的 master 分支
 $ git fetch origin master
 ```
 
-所取回的更新，在本地主机上要用"远程主机名/分支名"的形式读取。比如`origin`主机的`master`，就要用`origin/master`读取。
-
-`git branch`命令的`-r`选项，可以用来查看远程分支，`-a`选项查看所有分支。
-
-```shell
-$ git branch -r
-origin/master
-
-$ git branch -a
-* master
-  remotes/origin/master
-```
-
-上面命令表示，本地主机的当前分支是 `master`，远程分支是 `origin/master`。
+所取回的更新，在本地主机上要用"远程主机名/分支名"的形式读取。比如 `origin` 主机的 `master`，就要用 `origin/master` 读取。
 
 取回远程主机的更新以后，可以在它的基础上，使用`git checkout`命令创建一个新的分支。
 
@@ -141,7 +132,7 @@ $ git rebase origin/master
 
 #### 4. git pull
 
-`git pull`命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。
+`git pull` 命令的作用是，拉回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。`git pull` 命令的完整写法如下：
 
 ```shell
 $ git pull <远程主机名> <远程分支名>:<本地分支名>
@@ -166,23 +157,23 @@ $ git fetch origin
 $ git merge origin/next
 ```
 
-在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系（tracking）。比如，在`git clone`的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的`master`分支自动"追踪"`origin/master`分支。
+在某些场合，`Git` 会自动在本地分支与远程分支之间，建立一种追踪关系（tracking）。比如，在 `git clone` 的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的 `master` 分支自动追踪 `origin/master` 分支。
 
-Git也允许手动建立追踪关系。
+`Git` 也允许手动建立追踪关系。
 
 ```shell
 git branch --set-upstream master origin/next
 ```
 
-上面命令指定`master`分支追踪`origin/next`分支。
+上面命令指定 `master` 分支追踪`origin/next`分支。
 
-如果当前分支与远程分支存在追踪关系，`git pull`就可以省略远程分支名。
+如果当前分支与远程分支存在追踪关系，`git pull` 就可以省略远程分支名。
 
 ```shell
 $ git pull origin
 ```
 
-上面命令表示，本地的当前分支自动与对应的`origin`主机"追踪分支"（remote-tracking branch）进行合并。
+上面命令表示，本地的当前分支自动与对应的 `origin` 主机"追踪分支"（remote-tracking branch）进行合并。
 
 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
 
@@ -192,7 +183,7 @@ $ git pull
 
 上面命令表示，当前分支自动与唯一一个追踪分支进行合并。
 
-如果合并需要采用rebase模式，可以使用`--rebase`选项。
+如果合并需要采用 `rebase` 模式，可以使用 `--rebase` 选项。
 
 ```shell
 $ git pull --rebase <远程主机名> <远程分支名>:<本地分支名>
