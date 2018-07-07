@@ -60,9 +60,34 @@
 
 * 普通合并
 
-  普通合并和快速合并
+  普通合并和快速合并基本一样的，唯一的区别是在合并的时候添加 `--no-ff` 参数，表示禁用快速合并。
 
-  
+  因为普通合并与快速合并的示例几乎是一样的，唯一的区别在第 5 步，所以在讲述普通合并的时候， 前 4 步的操作就不在此赘述。
+
+  5. 合并 `dev` 分支到 `master` 分支，并查看历史提交
+
+     ```shell
+     $ git merge dev --no-ff -m          "merge dev to master no-ff"
+     Merge made by the 'recursive' strategy.
+      README.md | 3 +++
+      1 file changed, 3 insertions(+)
+     $ git log --oneline --graph        # 注意提交历史次数，以及左侧的 * 号
+     *   191b379 merge dev to master no-ff
+     |\
+     | * 75e171d update README.md add dddd on dev branch
+     | * 059eabc update README.md add cccc on dev branch
+     | * f09db33 update README.md add bbbb on dev branch
+     |/
+     * 0ec51c7 init README.md
+     ```
+
+     由以上两个日志比较可以发现，普通合并是将合并作为一次提交，而快速合并只是移动了一下 `HEAD` 指针，并不能分辨出有分支合并的迹象。
+
+     看如下两图，再理解一下快速合并和普通合并的区别。
+
+     ![快速合并](../images/git_branch_05.png)
+
+  ![普通合并](../images/git_branch_06.png)
 
 #### 2. 合并冲突
 
