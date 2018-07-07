@@ -12,6 +12,7 @@
 
      ```shell
      $ git init git_branch
+     $ cd git_branch
      $ echo "AAAA" >> README.md
      $ git add README.md
      $ git commit -m "init README.md"
