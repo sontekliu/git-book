@@ -17,5 +17,6 @@
   * [打标签](03_gitbase/07_git_tags.md)
 * [Git绝技—分支](04_branch/README.md)
   * [Git 分支](04_branch/01_git_branch_intro.md)
+  * [分支合并与合并冲突](04_git_branch/02_git_branch_merge.md) 
 * [Git高级进阶](06_git_senior.md)
 
