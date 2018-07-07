@@ -100,6 +100,11 @@
    $ echo "This is master add" >> README.md
    $ git commit -a -m "master update content and commit"
    $ cat README.md
+   AAAA
+   bbbb
+   cccc
+   dddd
+   This is master add
    ```
 
 2. 切换到 `dev` 分支上，修改 `README.md` 文件，如下代码：
@@ -109,6 +114,11 @@
    $ echo "This is dev add" >> README.md
    $ git commit -a -m "dev update content and commit"
    $ cat README.md
+   AAAA
+   bbbb
+   cccc
+   dddd
+   This is dev add
    ```
 
 3. 切换到 `master` 分支，将 `dev` 合并到 `master` 分支
@@ -116,6 +126,63 @@
    ```shell
    $ git checkout master
    $ git merge dev --no-ff -m "merge dev to master with no-ff"
+   Auto-merging README.md
+   CONFLICT (content): Merge conflict in README.md
+   Automatic merge failed; fix conflicts and then commit the result.
+   ```
+
+4. 如上操作出现冲突，此时查看 `README.md`
+
+   ```shell
+   $ git status			# 查看出现冲突时的状态
+   On branch master
+   You have unmerged paths.
+     (fix conflicts and run "git commit")
+     (use "git merge --abort" to abort the merge)
+   
+   Unmerged paths:
+     (use "git add <file>..." to mark resolution)		# 使用 add 命令标识解决冲突
+   
+   	both modified:   README.md
+   
+   no changes added to commit (use "git add" and/or "git commit -a")
+   
+   $ cat README.md            # 查看 README.md 的内容
+   AAAA
+   bbbb
+   cccc
+   dddd
+   <<<<<<< HEAD
+   This is master add
+   =======						# 发生冲突的分界线，上面属于一个分支，下面属于另一个分支
+   This is dev add
+   >>>>>>> dev
+   ```
+
+5. 修改 `README.md` 文件，标记已解决冲突，并提交，查看历史提交
+
+   ```shell
+   $ cat README.md             # 查看修改后的文件
+   AAAA
+   bbbb
+   cccc
+   dddd
+   This is master and dev add
+   $ git add README.md
+   $ git commit -m "resolve conflict"
+   $ git log --oneline --graph      # 查看提交历史
+   *   8b3a448 resolve conflict
+   |\
+   | * 9f539cc dev update content and commit
+   * | cd20de2 master update content and commit
+   * |   2312324 merge dev to master with no-ff
+   |\ \
+   | |/
+   | * 75e171d update README.md add dddd on dev branch
+   | * 059eabc update README.md add cccc on dev branch
+   | * f09db33 update README.md add bbbb on dev branch
+   |/
+   * 0ec51c7 init README.md
    ```
 
    
