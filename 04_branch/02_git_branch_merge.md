@@ -47,6 +47,10 @@
 
      ```shell
      $ git merge dev -m "merge dev to master"   # 此时处于 master 分支
+     Updating 0ec51c7..75e171d
+     Fast-forward (no commit created; -m option ignored)  # Fast-forward 快速合并标识
+      README.md | 3 +++
+      1 file changed, 3 insertions(+)
      $ git log --oneline --graph                # 注意提交纪录的次数，以及左侧的 * 号
      * 75e171d update README.md add dddd on dev branch
      * 059eabc update README.md add cccc on dev branch
@@ -55,6 +59,8 @@
      ```
 
 * 普通合并
+
+  普通合并和快速合并
 
   
 
