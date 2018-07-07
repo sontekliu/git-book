@@ -72,7 +72,7 @@
       README.md | 3 +++
       1 file changed, 3 insertions(+)
      $ git log --oneline --graph        # 注意提交历史次数，以及左侧的 * 号
-     *   191b379 merge dev to master no-ff
+     *   191b379 merge dev to master with no-ff
      |\
      | * 75e171d update README.md add dddd on dev branch
      | * 059eabc update README.md add cccc on dev branch
