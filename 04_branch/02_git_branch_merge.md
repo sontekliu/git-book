@@ -91,3 +91,31 @@
 
 #### 2. 合并冲突
 
+在项目开发过程中，发生冲突是非常常见的事情，冲突步仅仅在分支合并中出现，在同一分支由于不同的人同时修改同一个文件的同一个位置，这样就容易出现冲突。下面就以分支合并出现的冲突为示例，演示一下冲突出现的情况以及解决冲突的过程。示例场景还是接着上面的示例继续。
+
+1. 在 `master` 分支，修改 `README.md` 文件，如下面代码：
+
+   ```shell
+   $ git checkout master
+   $ echo "This is master add" >> README.md
+   $ git commit -a -m "master update content and commit"
+   $ cat README.md
+   ```
+
+2. 切换到 `dev` 分支上，修改 `README.md` 文件，如下代码：
+
+   ```shell
+   $ git checkout dev
+   $ echo "This is dev add" >> README.md
+   $ git commit -a -m "dev update content and commit"
+   $ cat README.md
+   ```
+
+3. 切换到 `master` 分支，将 `dev` 合并到 `master` 分支
+
+   ```shell
+   $ git checkout master
+   $ git merge dev --no-ff -m "merge dev to master with no-ff"
+   ```
+
+   
