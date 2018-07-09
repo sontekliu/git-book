@@ -119,5 +119,5 @@
 | 09   | `git fetch`                                     | 获取所有远程分支，但是不合并到本地分支
 | 10   | `git pull origin master`                        | 获取所有远程分支，并合并到当前分支
 
-
+http://www.topthink.com/topic/727.html
 
