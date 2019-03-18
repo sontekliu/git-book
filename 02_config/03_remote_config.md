@@ -30,6 +30,11 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
    ![SSH_Config_Over](../images/remote_config_04.png)
 
+5. 测试连接情况
+```shell
+$ ssh -T git@github.com
+```
+
 #### 3. 与远程仓库建立连接
 
 首先在 `Github` 上创建一个仓库。然后再将本地仓库（已存在）与远程仓库进行连接。具体连接如下：
