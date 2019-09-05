@@ -21,6 +21,7 @@ git push origin gh-pages:gh-pages
 git checkout master
 echo "=================success!!!====================="
 echo "test"
+echo "test2"
 
 
 
