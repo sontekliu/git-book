@@ -16,7 +16,7 @@ cp -r _book/* .
 rm -rf deploy.sh
 git add .
 git commit -m "publish book"
-git push origin gh-pages:gh-pages
+git push -u origin gh-pages:gh-pages
 
 git checkout master
 echo "=================success!!!====================="
