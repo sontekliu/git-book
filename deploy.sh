@@ -20,3 +20,4 @@ git push -u origin gh-pages:gh-pages
 
 git checkout master
 echo "=================success!!!====================="
+echo "test"
