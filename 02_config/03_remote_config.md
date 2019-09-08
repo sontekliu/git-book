@@ -31,6 +31,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
    ![SSH_Config_Over](../images/remote_config_04.png)
 
 5. 测试连接情况
+
 ```shell
 $ ssh -T git@github.com
 ```
